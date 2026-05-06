@@ -20,9 +20,8 @@ The idea came from wanting to build something that shows what AI and robotics ca
 
 ## 📸 Photos & Demo
 
-<img width="433" height="577" alt="WhatsApp_Image_2026-05-02_at_12 06 34_AM-removebg-preview" src="https://github.com/user-attachments/assets/86cffcc4-71e5-40e0-8492-7380fb6152a2" />
-<img width="960" height="1280" alt="WhatsApp Image 2026-05-04 at 11 13 16 AM" src="https://github.com/user-attachments/assets/b757b9dd-8d7e-40f7-a6bf-2f0ff852969e" />
-
+<img width="300" alt="VaaniAI Robot" src="https://github.com/user-attachments/assets/86cffcc4-71e5-40e0-8492-7380fb6152a2" />
+<img width="300" alt="VaaniAI Robot" src="https://github.com/user-attachments/assets/b757b9dd-8d7e-40f7-a6bf-2f0ff852969e" />
 ---
 
 ## ✨ What it can do
