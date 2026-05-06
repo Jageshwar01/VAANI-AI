@@ -1,8 +1,8 @@
-# 🤖 VaaniAI — Autonomous Humanoid Assistant
+# 🤖 VaaniAI — Autonomous Humanoid Robot
 
 <div align="center">
 
-**An advanced, fully autonomous humanoid robot software stack combining local AI, Computer Vision, Speech Recognition, and Real-time Hardware Control into a single cohesive "Brain".**
+**An AI-powered humanoid robot that can see, hear, speak, recognise faces, conduct interviews, and control its own physical body — built solo by a B.Tech student with limited budget and locally sourced materials.**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-black?style=for-the-badge&logo=ai&logoColor=white)](https://ollama.com)
@@ -14,69 +14,114 @@
 
 ---
 
-## 🌟 Overview
+## 📸 Photos
 
-VaaniAI is a production-grade humanoid robot software platform designed to act as a **university guide**, **interactive receptionist**, or **personal companion**. It features a highly responsive emotional personality, multilingual voice support (English, Hindi, Odia), real-time face recognition, and autonomous physical movement — all running **100% offline** on local hardware.
+<div align="center">
+<img width="300" alt="VaaniAI Robot Front" src="https://github.com/user-attachments/assets/86cffcc4-71e5-40e0-8492-7380fb6152a2" />
+&nbsp;&nbsp;&nbsp;
+<img width="300" alt="VaaniAI Robot Full" src="https://github.com/user-attachments/assets/b757b9dd-8d7e-40f7-a6bf-2f0ff852969e" />
+</div>
 
-### What Makes VaaniAI Special?
+---
+
+## 🌟 What is VaaniAI?
+
+VaaniAI is a humanoid robot I built completely alone — no team, no lab, no sponsorship.
+
+She moves on a 4-wheel chassis, detects nearby people, recognises their faces, and starts talking — either conducting a structured interview or holding a natural conversation depending on the mode.
+
+She is dressed in a real human costume. When you stand in front of her, it does not feel like a machine. It feels like someone is actually there.
+
+The goal was simple — build something that shows what AI and robotics can do together in the real world, not just on paper.
+
+### What makes VaaniAI special?
 
 - 🧠 **Fully Offline AI** — No cloud APIs, no data leaks. Everything runs locally via Ollama.
 - 👁️ **Sees & Remembers Faces** — Auto-enrolls new people and greets them by name next time.
 - 🗣️ **Hears & Speaks Naturally** — Whisper AI for hearing + Edge-TTS/Offline voice for speaking.
-- 🦾 **Physical Body** — Controls motors, servos, and mouth via ESP32/Arduino serial bridge.
-- 🎓 **Presentation Mode** — Can autonomously deliver a 1-minute university presentation.
+- 🦾 **Real Physical Body** — Controls motors, servos, and mouth movement via ESP32/Arduino.
+- 🎓 **Presentation Mode** — Autonomously delivers a full university presentation.
 - 🧪 **Interview Mode** — Conducts structured interviews and generates performance reports.
+
+---
+
+## 🎯 Two Core Modes
+
+### 🤝 Social Mode
+Vaani detects your face, greets you by name, tracks your movement with her head, and holds a natural multi-turn conversation. Supports English, Hindi, and Odia.
+
+### 🎯 Interview Mode
+Right now, there is no physical robot in India that conducts interviews.
+VaaniAI fills that gap.
+
+She sits in front of you like a real interviewer — asks questions, listens to your answers, evaluates them using AI, and generates a full feedback report with scores for communication, technical knowledge, and confidence.
+
+Students can practice interviews with a robot that actually responds. No screen. No app. A real face-to-face experience.
 
 ---
 
 ## ✨ Core Features
 
-### 🧠 The Brain — AI & NLP
+### 🧠 AI & NLP
 | Feature | Description |
 |---|---|
 | **Local LLM** | Powered by Ollama with dual-model architecture (Fast: `qwen2:0.5b`, Smart: `phi3:mini`) |
-| **Knowledge Base (RAG)** | Reads `.txt` files from `data/knowledge/` and injects facts into AI context. Teach the robot university details, faculty info, or custom scripts — no retraining needed |
-| **Emotional Personality** | Custom system prompts create human-like speech with vocal expressions (*Haha*, *Wow*, *Aww*) |
+| **Knowledge Base (RAG)** | Reads `.txt` files from `data/knowledge/` and injects facts into AI context — no retraining needed |
+| **Emotional Personality** | Custom system prompts create human-like speech with vocal expressions |
 | **Memory System** | SQLite-backed memory remembers past conversations, enrolled faces, and relationships |
-| **Intent Classifier** | Fuzzy-matching NLP engine classifies voice commands into hardware actions or conversation with 82%+ confidence threshold |
-| **Presentation Mode** | Detects keywords like *"introduce yourself"* or *"presentation"* and delivers a full scripted speech from the knowledge base |
+| **Intent Classifier** | Fuzzy-matching NLP engine classifies voice commands with 82%+ confidence threshold |
+| **Presentation Mode** | Detects keywords like *"introduce yourself"* and delivers a full scripted speech |
 
-### 🗣️ Voice Interface — Hearing & Speaking
+### 🗣️ Voice — Hearing & Speaking
 | Feature | Description |
 |---|---|
-| **Speech-to-Text** | `faster-whisper` with 5-layer anti-hallucination pipeline (no-speech detection, log-probability filtering, blocklist, repetition check) |
-| **Custom Vocabulary** | Loads `data/vocabulary.txt` to properly hear Indian names and technical terms without hallucinating |
-| **Command Queue** | Thread-safe queue system ensures no voice command is ever silently dropped, even if the brain is busy processing |
-| **Text-to-Speech** | Dual-engine: Edge-TTS (online, natural Indian female voice) with automatic fallback to pyttsx3 (offline, Microsoft Zira female voice) |
-| **Multilingual** | Supports English, Hindi (Devanagari), and Odia with automatic language detection and voice switching |
-| **Persistent Event Loop** | Dedicated asyncio thread prevents TTS timeouts caused by multi-thread conflicts |
+| **Speech-to-Text** | `faster-whisper` with 5-layer anti-hallucination pipeline |
+| **Custom Vocabulary** | Loads `data/vocabulary.txt` to properly hear Indian names and technical terms |
+| **Command Queue** | Thread-safe queue ensures no voice command is silently dropped |
+| **Text-to-Speech** | Edge-TTS (online, natural Indian female voice) with fallback to pyttsx3 (offline) |
+| **Multilingual** | English, Hindi (Devanagari), and Odia with automatic language detection |
 
-### 👁️ Computer Vision — Sight
+### 👁️ Computer Vision
 | Feature | Description |
 |---|---|
 | **Face Recognition** | Real-time face detection and identification using `face_recognition` library |
-| **Auto-Enrollment** | Silently captures and enrolls new faces in a 3-second background thread without pausing conversation |
-| **Face Stability Buffer** | Requires 4 consecutive identical frames before triggering a mode switch — prevents flicker-based false detections |
-| **Social Greetings** | Recognizes registered users and generates personalized, memory-aware greetings |
+| **Auto-Enrollment** | Silently captures and enrolls new faces in a 3-second background thread |
+| **Face Stability Buffer** | Requires 4 consecutive identical frames before triggering mode switch |
 | **Head Tracking** | Automatically moves head servo to follow the detected face position |
 
-### 🦾 Hardware & Movement — Physical Body
+### 🦾 Hardware & Movement
 | Feature | Description |
 |---|---|
-| **Serial Bridge** | Thread-safe `PySerial` communication with auto-reconnection, heartbeat monitoring, and graceful fallback to simulation mode |
-| **Motor Control** | Forward, backward, left, right movement with configurable speed and auto-stop timeout |
-| **Servo Control** | Head servo for left/right tracking, mouth servo for lip-sync during speech |
-| **Micro-Animations** | Continuous idle movements (head sway, mouth sync) to make the robot feel alive |
-| **ESP32/Arduino Firmware** | C++ firmware for real-time motor and servo control via serial commands |
+| **Serial Bridge** | Thread-safe PySerial communication with auto-reconnection and heartbeat monitoring |
+| **Motor Control** | Forward, backward, left, right with configurable speed and auto-stop timeout |
+| **Servo Control** | Head servo for tracking, mouth servo for lip-sync during speech |
+| **Micro-Animations** | Continuous idle movements to make the robot feel alive |
+| **Ultrasonic Sensor** | Detects a person at 1 meter and stops automatically |
 
-### 🎓 Special Modes
-| Mode | Description |
+---
+
+## 📊 Honest Project Status
+
+| Component | Status |
 |---|---|
-| **Idle** | Listens for commands, processes camera, auto-greets new visitors |
-| **Social** | Multi-turn AI conversation with 20-second listening window and context preservation |
-| **Admin** | Full control mode for the owner — face enrollment, memory review, direct motor commands |
-| **Interview** | Structured interview system with configurable questions and automated scoring |
-| **Presentation** | Delivers a full 1-minute scripted presentation from knowledge base |
+| 4-foot Robot Body | ✅ Done |
+| 4-Wheel Chassis + DC Motors | ✅ Done |
+| Human-like Costume & Appearance | ✅ Done |
+| Arduino Motor Control | ✅ Done |
+| Camera + Face Detection | ✅ Done |
+| Voice Recognition | ✅ Done |
+| Text to Speech | ✅ Done |
+| Ultrasonic Sensor | ✅ Done |
+| Interview Mode | ✅ Done |
+| Social Conversation Mode | ✅ Done |
+| Admin Control System | ✅ Done |
+| Raspberry Pi Integration | ✅ Done |
+| Emotion Detection | 🔄 In Development |
+| Full AI Conversation Upgrade | 🔄 In Development |
+| Cloud AI Integration | 🔄 Planned |
+| Mobile App Control | 🔄 Planned |
+
+> This is a solo project built with limited resources. Every component listed as done is physically working. The robot is real — not just a concept.
 
 ---
 
@@ -99,20 +144,14 @@ VaaniAi/
 │
 ├── ai/                           # AI & Language Models
 │   ├── conversation/             # Chat engine, personality, prompt builder
-│   │   ├── chat_engine.py        # Ollama API client with dual-model support
-│   │   ├── personality.py        # System prompt generator (mode-aware)
-│   │   ├── prompt_builder.py     # Constructs context-rich LLM prompts
-│   │   └── response_filter.py    # Cleans AI output for TTS compatibility
 │   ├── knowledge/                # RAG Knowledge Base
-│   │   ├── knowledge_base.py     # Keyword-based fact retrieval engine
-│   │   └── vaani_presentation.txt # Presentation script & identity info
 │   ├── memory/                   # Conversation memory manager
 │   ├── interview/                # Interview question engine & scoring
 │   └── vision_ai/                # AI-powered vision analysis
 │
 ├── voice/                        # Voice I/O Engines
 │   ├── speech_to_text.py         # Whisper STT with 5-layer hallucination filter
-│   └── text_to_speech.py         # Edge-TTS (online) + pyttsx3 (offline) dual engine
+│   └── text_to_speech.py         # Edge-TTS (online) + pyttsx3 (offline)
 │
 ├── vision/                       # Computer Vision
 │   ├── camera.py                 # Threaded OpenCV camera manager
@@ -123,7 +162,7 @@ VaaniAi/
 │   ├── hardware_bridge/
 │   │   └── serial_bridge.py      # Thread-safe PySerial with auto-reconnect
 │   └── movement/
-│       ├── motor_controller.py   # Motor commands (forward/backward/left/right)
+│       ├── motor_controller.py   # Motor commands
 │       ├── head_controller.py    # Servo-based head tracking
 │       └── distance_keeper.py    # Ultrasonic distance safety system
 │
@@ -140,15 +179,9 @@ VaaniAi/
 ├── data/                         # Runtime Data
 │   ├── known_faces/              # Enrolled face encodings (.pkl files)
 │   ├── knowledge/                # Knowledge base text files (RAG)
-│   │   ├── about_vaani.txt       # Robot identity facts
-│   │   ├── university.txt        # University information
-│   │   └── faculties.txt         # Faculty directory with contact details
 │   ├── vocabulary.txt            # Custom STT vocabulary for Indian names
 │   ├── question_sets/            # Interview question banks
 │   └── reports/                  # Generated interview reports
-│
-├── scripts/                      # Utility Scripts
-│   └── generate_dataset.py       # Training data generation helper
 │
 ├── tests/                        # Test Suite
 ├── docs/                         # Documentation
@@ -173,8 +206,8 @@ VaaniAi/
 ### Step 1: Clone & Create Virtual Environment
 
 ```bash
-git clone https://github.com/YourUsername/VaaniAi.git
-cd VaaniAi
+git clone https://github.com/Jageshwar01/VAANI-AI.git
+cd VAANI-AI
 
 # Create virtual environment
 python -m venv .venv
@@ -192,14 +225,11 @@ source .venv/bin/activate
 pip install -r app/requirements.txt
 ```
 
-> **Note (Windows):** You may need to install Visual Studio Build Tools with the "Desktop development with C++" workload for the `face_recognition` / `dlib` library.
-
 ### Step 3: Setup Ollama Models
 
 ```bash
 # Install Ollama from https://ollama.com
 
-# Pull the AI models
 ollama pull qwen2:0.5b       # Fast model (352 MB) — casual chat
 ollama pull phi3:mini         # Smart model (2.2 GB) — presentations, interviews
 ```
@@ -209,19 +239,15 @@ ollama pull phi3:mini         # Smart model (2.2 GB) — presentations, intervie
 Edit `app/config.py` to match your setup:
 
 ```python
-# Robot Identity
 ROBOT_NAME = "VaaniAI"
 OWNER_NAME = "Jageshwer"
 
-# Hardware (set False if no ESP32 connected)
 USE_HARDWARE = True
 SERIAL_PORT = "COM5"          # Windows: COM5, Linux: /dev/ttyUSB0
 
-# AI Models
-FAST_AI_MODEL = "qwen2:0.5b"  # For quick responses
-SMART_AI_MODEL = "phi3:mini"   # For presentations & interviews
+FAST_AI_MODEL = "qwen2:0.5b"
+SMART_AI_MODEL = "phi3:mini"
 
-# Features (enable/disable)
 USE_VOICE_INPUT = True
 USE_TTS = True
 USE_CAMERA = True
@@ -233,23 +259,18 @@ Add `.txt` files to `data/knowledge/` to teach the robot custom facts:
 
 ```text
 # Example: data/knowledge/university.txt
-Sarala Birla University is a private university located in Ranchi, Jharkhand, India.
-The Vice Chancellor is Prof. Dr. Jeganathan Chockalingam.
+Sarala Birla University is located in Ranchi, Jharkhand, India.
 ```
-
-The robot will automatically load and use these facts when answering relevant questions.
 
 ---
 
 ## 🚀 Running VaaniAI
 
-### Start Ollama (if not auto-starting)
 ```bash
+# Start Ollama
 ollama serve
-```
 
-### Launch the Robot
-```bash
+# Launch the robot
 python app/main.py
 ```
 
@@ -262,7 +283,6 @@ Loaded 4 known faces.
 Camera started successfully (threaded).
 [INFO] Serial connected on COM5
 [STT] Calibrating noise (2 sec)...
-[AI] Warming up AI brain (first load takes 30-60 sec)...
 [AI] Brain ready! ✅
 VaaniAI: Good to see you! I am awake and ready.
 ```
@@ -275,10 +295,8 @@ VaaniAI: Good to see you! I am awake and ready.
 | *"Move forward"* / *"Go back"* | Moves the physical body |
 | *"Turn left"* / *"Turn right"* | Rotates the body |
 | *"Give your presentation"* | Delivers a 1-minute scripted speech |
-| *"Introduce yourself"* | Triggers the self-introduction |
 | *"Start interview"* | Begins structured interview mode |
 | *"Switch to Hindi"* | Changes language to Hindi |
-| *"Switch to English"* | Changes back to English |
 | *"Enroll person"* | Starts face enrollment |
 | *"Stop"* | Stops all movement |
 | *"Shutdown"* | Gracefully shuts down |
@@ -306,55 +324,80 @@ VaaniAI: Good to see you! I am awake and ready.
 
 ---
 
+## 🔧 Hardware Used
+
+- Raspberry Pi 4
+- Arduino Uno
+- L298N Motor Driver
+- 4-Wheel Robot Chassis + DC Motors
+- Pi Camera / USB Camera
+- Ultrasonic Sensor (HC-SR04)
+- USB Microphone
+- Speaker
+- Servo Motor (head movement)
+- Tablet/Screen
+- Battery Pack
+- Jumper Wires, Breadboard
+
+---
+
+## 🌍 Where it can be used
+
+- 🏫 **Colleges** — automated student interviews and assessments
+- 🏢 **Companies** — HR interview assistance and candidate screening
+- 🎪 **Exhibitions & Tech Fests** — interactive public robot
+- 🏥 **Healthcare** — reception and patient guidance
+- 🔬 **Research** — AI and robotics prototype for academic study
+
+---
+
 ## 🔧 Troubleshooting
 
 | Problem | Solution |
 |---|---|
-| **Serial Port Error** (`FileNotFoundError`) | Ensure ESP32 is plugged in. Check `SERIAL_PORT` in `config.py`. Set `USE_HARDWARE = False` to test without hardware. |
-| **STT Hallucinations** (random words when silent) | Update `data/vocabulary.txt`. The 5-layer filter blocks most hallucinations automatically. |
-| **Face Not Enrolling** | Ensure good lighting. The system needs a clear, front-facing view for 3 seconds. |
-| **Edge TTS Timeout** | Check internet connection. The system automatically falls back to offline voice (Microsoft Zira). |
-| **Ollama Not Responding** | Run `ollama serve` in a separate terminal. Ensure models are pulled with `ollama list`. |
-| **Microphone Not Detected** | Check that `pyaudio` is installed. On Windows, ensure the correct audio device is set as default. |
-| **"ModuleNotFoundError"** | Activate your virtual environment: `.venv\Scripts\activate` (Windows) |
+| **Serial Port Error** | Check `SERIAL_PORT` in `config.py`. Set `USE_HARDWARE = False` to test without hardware. |
+| **STT Hallucinations** | Update `data/vocabulary.txt`. The 5-layer filter blocks most hallucinations automatically. |
+| **Face Not Enrolling** | Ensure good lighting and a clear front-facing view for 3 seconds. |
+| **Edge TTS Timeout** | Check internet. System automatically falls back to offline voice. |
+| **Ollama Not Responding** | Run `ollama serve` in a separate terminal. Check `ollama list`. |
+| **ModuleNotFoundError** | Activate virtual environment: `.venv\Scripts\activate` (Windows) |
 
 ---
 
-## 📊 Technical Specifications
+## 🚀 What I Plan to Add Next
 
-| Component | Technology | Details |
-|---|---|---|
-| **AI Brain** | Ollama (Local LLM) | Dual-model: Fast (`qwen2:0.5b`) + Smart (`phi3:mini`) |
-| **Speech Recognition** | faster-whisper | Base model, CPU int8, 5-layer hallucination filter |
-| **Voice Output** | Edge-TTS + pyttsx3 | Indian female voice (Neerja) online, Zira offline |
-| **Vision** | OpenCV + face_recognition | Real-time face detection, tracking, and enrollment |
-| **Hardware** | ESP32 / Arduino | Serial bridge at 9600 baud with auto-reconnect |
-| **Database** | SQLite | People, memories, sessions, interview records |
-| **Web UI** | Flask | Robot face display and status dashboard |
-| **Languages** | English, Hindi, Odia | Auto-detected via Unicode range analysis |
+- Full emotion detection and confidence analysis
+- Autonomous navigation with obstacle mapping
+- Cloud AI for smarter conversations
+- Auto report generation after each interview
+- Mobile app for remote control
 
 ---
 
-## 🤝 Contributing
+## 👨‍💻 Built by
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+**Jageshwar Vishwakarma**
+B.Tech CSE (Data Science) — Sarala Birla University, Ranchi, Jharkhand
+
+Solo built — no team, no mentor, no lab funding. Hardware sourced from local scrap market and pocket money. Pure student effort. 💪
+
+- 🌐 Portfolio: [jageshwar01.github.io/Jageshwar](https://jageshwar01.github.io/Jageshwar)
+- 💼 LinkedIn: [linkedin.com/in/jageshwar-380b2b257](https://linkedin.com/in/jageshwar-380b2b257)
+- 🐙 GitHub: [github.com/Jageshwar01](https://github.com/Jageshwar01)
+- 📧 jageshwarkumar15@gmail.com
 
 ---
 
 ## 📄 License
 
-This project is developed by **Jageshwer** as part of a B.Tech Computer Science project at **Sarala Birla University**, Ranchi, Jharkhand, India.
+MIT License — open source and free to use.
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for Advanced Human-Robot Interaction**
+*One student. No team. A robot that talks, thinks, and interviews people. Still building — still improving.*
 
-*VaaniAI — Bridging the gap between machines and human emotion.*
+*If this inspired you, give it a ⭐*
 
 </div>
