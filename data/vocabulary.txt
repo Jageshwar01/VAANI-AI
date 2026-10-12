@@ -1,0 +1,1221 @@
+VaaniAI
+Jageshwer
+Saksham
+BPUT
+Rourkela
+Odisha
+Aryan
+Priya
+Rahul
+Rohan
+Robot
+Humanoid
+# ============================================================
+# VaaniAI - Custom STT Vocabulary List (India Edition)
+
+# ============================================================
+# POPULAR INDIAN MALE NAMES (Aam Mard ke Naam)
+# ============================================================
+Aarav
+Aakash
+Aditya
+Ajay
+Akash
+Amitabh
+Anand
+Aniket
+Anil
+Anish
+Ankit
+Ankur
+Anshul
+Anupam
+Arjun
+Arnav
+Ashish
+Ashok
+Atharv
+Atul
+Ayush
+Bhavesh
+Chirag
+Deepak
+Devraj
+Dhruv
+Dinesh
+Gaurav
+Girish
+Harish
+Hemant
+Himanshu
+Hitesh
+Jagdish
+Jageshwer
+Jatin
+Jayant
+Kailash
+Kamlesh
+Kapil
+Kartik
+Kiran
+Krishna
+Kuldeep
+Kumar
+Lokesh
+Mahesh
+Manish
+Manoj
+Mayank
+Mihir
+Mithun
+Mohit
+Mukesh
+Narayan
+Naresh
+Naveen
+Nikhil
+Nilesh
+Niraj
+Nishant
+Nitesh
+Nithin
+Pankaj
+Parth
+Piyush
+Pradeep
+Prakash
+Pranav
+Prasad
+Prashant
+Praveen
+Prem
+Puneet
+Rahul
+Raj
+Rajat
+Rajesh
+Rajan
+Rajiv
+Rajkumar
+Rakesh
+Ram
+Ramesh
+Ravi
+Rishabh
+Ritesh
+Rohit
+Roshan
+Sachin
+Saksham
+Sanjay
+Sanjeev
+Santosh
+Saurabh
+Shailesh
+Shashank
+Shekhar
+Shivam
+Shreyash
+Shubham
+Shyam
+Siddhant
+Siddharth
+Sohan
+Sourabh
+Subhash
+Sudhir
+Sunil
+Suresh
+Swapnil
+Tanmay
+Tarun
+Uday
+Umesh
+Vaibhav
+Vikas
+Vikram
+Vipin
+Vishal
+Vivek
+Yash
+Yogesh
+Yuvraj
+
+# ============================================================
+# POPULAR INDIAN FEMALE NAMES (Aam Aurat ke Naam)
+# ============================================================
+Aarti
+Aishwarya
+Akanksha
+Alpana
+Amrita
+Ananya
+Anjali
+Ankita
+Anushka
+Archana
+Arya
+Avni
+Bhavna
+Chanchal
+Deepa
+Deepika
+Disha
+Divya
+Ekta
+Garima
+Gayatri
+Harshita
+Heena
+Isha
+Jyoti
+Kajal
+Kalpana
+Kanika
+Kavita
+Khushi
+Kirti
+Komal
+Kritika
+Kumkum
+Latika
+Laxmi
+Madhuri
+Mahima
+Mansi
+Meenu
+Meera
+Megha
+Monika
+Mudra
+Namrata
+Nandita
+Neha
+Nidhi
+Nikita
+Nisha
+Nitu
+Nupur
+Poonam
+Pooja
+Prachi
+Pragya
+Priya
+Priyanka
+Rachna
+Radha
+Rashmi
+Ritu
+Riya
+Rukhmini
+Saanvi
+Saloni
+Sangeeta
+Sanjana
+Sarita
+Savita
+Sejal
+Shefali
+Sheetal
+Shikha
+Shilpa
+Shraddha
+Shreya
+Shweta
+Simran
+Sneha
+Sonali
+Sonam
+Srishti
+Suman
+Sunita
+Swati
+Tanvi
+Tanya
+Usha
+Varsha
+Vidya
+Yasmin
+
+# ============================================================
+# INDIAN SURNAMES (Upnam / Family Names)
+# ============================================================
+Agarwal
+Agrawal
+Ahluwalia
+Ahuja
+Bajaj
+Batra
+Bhatnagar
+Bhatt
+Chaudhary
+Chaudhari
+Chopra
+Deshpande
+Dhawan
+Dubey
+Dutta
+Gandhi
+Ghosh
+Goswami
+Goyal
+Gupta
+Iyer
+Jain
+Joshi
+Kapoor
+Kaur
+Khatri
+Khanna
+Kumar
+Lal
+Malhotra
+Mehra
+Mehta
+Mishra
+Mittal
+Mukherjee
+Nair
+Nayyar
+Pandey
+Patel
+Pillai
+Prasad
+Rao
+Reddy
+Sahoo
+Saxena
+Shah
+Sharma
+Shukla
+Singh
+Sinha
+Srivastava
+Tiwari
+Trivedi
+Upadhyay
+Varma
+Verma
+Yadav
+
+# ============================================================
+# ODISHA - SPECIFIC NAMES & WORDS (Odisha ke Khaas Naam)
+# ============================================================
+Abhimanyu
+Ajit
+Akshaya
+Amiya
+Anshuman
+Arindam
+Asit
+Babita
+Basant
+Bedavyas
+Bijaya
+Bikram
+Bimal
+Biswa
+Debadutta
+Debasmita
+Debendra
+Deepankar
+Dipti
+Gitanjali
+Gopal
+Hemanta
+Itishree
+Jayashree
+Jitendra
+Jugal
+Kumari
+Laxman
+Lipika
+Madhusmita
+Mamata
+Manoranjan
+Manorama
+Meenakshi
+Minati
+Mrutyunjay
+Nabakishore
+Namita
+Niranjan
+Nirupama
+Padmalaya
+Paresh
+Prabhat
+Pradip
+Pradeep
+Prashanta
+Pratikhya
+Premananda
+Priyadarshini
+Pujarani
+Purna
+Rajani
+Ranjit
+Rashmita
+Ratna
+Reena
+Sabitri
+Sabyasachi
+Sagarika
+Sailesh
+Samir
+Sampad
+Sanjukta
+Santilata
+Saraswati
+Saroj
+Saubhagya
+Sibani
+Sitakanta
+Smita
+Smrutilekha
+Soumya
+Srikant
+Subhranshu
+Subrat
+Sudhansu
+Sudhir
+Sulochan
+Sunanda
+Supriya
+Susmita
+Swagatika
+Tapas
+Tapasi
+Truptimayee
+Umakanta
+
+# ============================================================
+# BIHAR & JHARKHAND - NAMES (Bihar aur Jharkhand ke Naam)
+# ============================================================
+Abhay
+Alok
+Amarnath
+Amod
+Anurag
+Awadhesh
+Bablu
+Babulal
+Baijnath
+Balram
+Chandeshwar
+Chandrakant
+Deo
+Devendra
+Dilip
+Gajendra
+Govind
+Harinandan
+Jagannath
+Jitendra
+Kaushal
+Kedar
+Lalan
+Lallan
+Lallu
+Mahendra
+Mithilesh
+Mritunjay
+Nagendra
+Nand
+Navin
+Prabhu
+Prabhunath
+Raghunath
+Rajendra
+Rajkishore
+Rambabu
+Ramchandra
+Ramji
+Ravindra
+Renu
+Ruplal
+Sanjit
+Satyendra
+Shambhu
+Shivendra
+Sujeet
+Surendra
+Triloki
+Umesh
+Upendra
+Vidyanand
+Vinay
+
+# ============================================================
+# NORTH INDIA - HINDI BELT NAMES (UP, MP, Rajasthan)
+# ============================================================
+Abhilash
+Ajeet
+Akhilesh
+Amarjeet
+Amrish
+Anshul
+Anupam
+Arvind
+Awanish
+Balveer
+Bhupendra
+Chandrahas
+Dharmendra
+Ghanshyam
+Girijesh
+Gyan
+Gyanendra
+Hariom
+Harishchandra
+Indrajit
+Ishwar
+Jaiprakash
+Jamuna
+Jankidevi
+Jawahar
+Kamlesh
+Kaushalendra
+Kedarnath
+Kusum
+Lakshmikant
+Lalita
+Madanlal
+Mahavir
+Mukund
+Mundrika
+Nandlal
+Naramdeshwar
+Nirmala
+Om Prakash
+Omkar
+Phool
+Phoolmati
+Ramsevak
+Ramsharan
+Ramveer
+Saroj
+Shivkumar
+Shyamlal
+Sudama
+Tulsidas
+Virendra
+Vishwanath
+
+# ============================================================
+# SOUTH INDIA - NAMES (Tamil, Telugu, Kannada, Malayalam)
+# ============================================================
+Aadhitya
+Aaradhana
+Aishwarya
+Amarnath
+Ambika
+Anand
+Anantharaman
+Anitha
+Anjaneya
+Annapurna
+Arjunan
+Arunachalam
+Arundhati
+Arvindakshan
+Balakrishnan
+Balamurali
+Bharathi
+Bhavani
+Chandrasekhar
+Chidambaram
+Chiranjeevi
+Dakshinamurthy
+Damodaran
+Eswaran
+Ganesan
+Ganesh
+Geetha
+Gopalakrishnan
+Govindasamy
+Gurunathan
+Indira
+Janakiraman
+Jayachandran
+Jayakumar
+Jayalakshmi
+Jayamani
+Jayaraman
+Jayashree
+Jothi
+Kalyani
+Kamakshi
+Kamalakannan
+Karthikeyan
+Krishnakumar
+Krishnamurthy
+Krishnaswamy
+Kumaran
+Kumaresan
+Lakshmi
+Lakshminarayanan
+Lalitha
+Madhavan
+Mahalakshmi
+Mahendran
+Manimegalai
+Manoharan
+Marichamy
+Meenakshi
+Mohanraj
+Muralitharan
+Murugesan
+Nallasivam
+Narasimhan
+Narayanan
+Natarajan
+Navaneethakrishnan
+Nirmala
+Palaniswami
+Palanivel
+Prabakaran
+Prabhakaran
+Ragunath
+Rajagopal
+Rajagopalan
+Rajasekaran
+Rajeswari
+Rajkumar
+Ramachandran
+Ramalingam
+Ramanathan
+Ramasubramanian
+Ramasamy
+Ramesh
+Ravi
+Ravichandran
+Revathi
+Saravanan
+Saroja
+Sasikumar
+Selvaraj
+Selvam
+Shanmugam
+Shanmugavel
+Shanthi
+Sivakami
+Sivakumar
+Sivaraj
+Soundarya
+Subramanian
+Sugumar
+Sundarajan
+Sundareswaran
+Suresh
+Surya
+Swaminathan
+Tamilarasi
+Tamilselvan
+Thirumala
+Thirumurugan
+Thirunavukarasu
+Thyagarajan
+Umamaheswari
+Vaidyanathan
+Veeraswamy
+Velmurugan
+Venkataramaiah
+Venkatasubramanian
+Venkatesh
+Vijayakumar
+Vijayalakshmi
+Vijayaraj
+Viswanathan
+
+# ============================================================
+# PUNJAB, HARYANA, HIMACHAL - NAMES
+# ============================================================
+Amarinder
+Amarjot
+Amrinder
+Amritpal
+Angad
+Anupreet
+Arshdeep
+Avinash
+Baldeep
+Baldev
+Balvinder
+Bhupinder
+Daljeet
+Daljit
+Dalvinder
+Dilpreet
+Dilpreet
+Gagandeep
+Gurdeep
+Gurdial
+Gurjit
+Gurjot
+Gurkirat
+Gurmeet
+Gurpreet
+Gursharan
+Gurwinder
+Hardeep
+Harmeet
+Harneet
+Harpal
+Harpreet
+Harshdeep
+Harwinder
+Inderjit
+Inderpreet
+Jagbir
+Jagdeep
+Jagdip
+Jagmeet
+Jagpal
+Jaspreet
+Jaswinder
+Jatinder
+Jugraj
+Karamjit
+Kulbir
+Kuldeep
+Kulvir
+Kulwant
+Kulwinder
+Lakhwinder
+Lovejeet
+Lovpreet
+Mandeep
+Maninder
+Manjit
+Manmeet
+Manpreet
+Manveer
+Navdeep
+Navjot
+Navneet
+Navpreet
+Paramjit
+Pardeep
+Pawandeep
+Ranjeet
+Ranjit
+Rupinder
+Satinder
+Satnam
+Simranjit
+Sukhjeet
+Sukhjit
+Sukhwinder
+Surjit
+Tarsem
+Tejinder
+Varinder
+Veerpal
+Vikramjit
+
+# ============================================================
+# GUJARAT & RAJASTHAN - NAMES
+# ============================================================
+Alpeshbhai
+Ambalal
+Ashvinbhai
+Babubhai
+Bhadresh
+Bhagvandas
+Bharatkumar
+Chintanbhai
+Dhirajbhai
+Dipikaben
+Govindbhai
+Hansaben
+Hasmukhbhai
+Hemaben
+Hemantkumar
+Hiteshbhai
+Ilaben
+Jashvantbhai
+Jayeshbhai
+Jigneshbhai
+Kalpeshbhai
+Kanubhai
+Kishorbhai
+Lalbhai
+Mahendrabhai
+Manubhai
+Nareshbhai
+Nathabhai
+Nileshbhai
+Nirmaben
+Pankajbhai
+Prafulbhai
+Prafullaben
+Praveenbhai
+Rajeshbhai
+Rakeshbhai
+Ramanbhai
+Rashmiben
+Ratilal
+Rujuta
+Sanjaybhai
+Sarojben
+Satishbhai
+Shaileshbhai
+Shantaben
+Sudhirbhai
+Sureshbhai
+Taraben
+Umedram
+Vinodbhai
+Vipulbhai
+
+# ============================================================
+# NORTHEAST INDIA - NAMES (Assam, Meghalaya, Manipur etc.)
+# ============================================================
+Abhijit
+Aditya
+Amlan
+Amrit
+Anirban
+Ankur
+Anupam
+Arnab
+Aroop
+Arpita
+Arundoy
+Banashree
+Bhaskar
+Biplab
+Biren
+Bipasha
+Daisy
+Debajit
+Dibyajyoti
+Dimpy
+Dipankar
+Dipjyoti
+Dulumoni
+Gitali
+Hiramoni
+Hiranya
+Hiyasmin
+Hridoy
+Jinti
+Juri
+Jutika
+Kalyan
+Karabi
+Kaushik
+Khagen
+Lakhi
+Lohit
+Maina
+Manas
+Manash
+Manimala
+Monjul
+Moushumi
+Nayan
+Nilakshi
+Nilufar
+Nirupama
+Pallabi
+Pankaj
+Parag
+Partha
+Pinku
+Pradip
+Pranab
+Pranjal
+Priti
+Pronob
+Puja
+Purnima
+Rajib
+Ranjit
+Rekha
+Renu
+Rima
+Rinku
+Rituraj
+Rupam
+Sailen
+Sanchita
+Sangeeta
+Sangita
+Sanjib
+Saptadipa
+Satyajit
+Shyamal
+Smita
+Someswar
+Subasana
+Subodh
+Sumitra
+Swapna
+Syeda
+Tinku
+Trishna
+Tulsi
+Usha
+
+# ============================================================
+# MAJOR INDIAN CITIES & STATES (Sheher aur Rajya)
+# ============================================================
+Agartala
+Agra
+Ahmedabad
+Aizawl
+Ajmer
+Aligarh
+Allahabad
+Amaravati
+Amravati
+Amritsar
+Asansol
+Aurangabad
+Bengaluru
+Bhopal
+Bhubaneswar
+Bikaner
+Chandigarh
+Chennai
+Coimbatore
+Cuttack
+Dehradun
+Delhi
+Dhanbad
+Durgapur
+Faridabad
+Gandhinagar
+Guwahati
+Gwalior
+Howrah
+Hubli
+Hyderabad
+Imphal
+Indore
+Itanagar
+Jabalpur
+Jaipur
+Jalandhar
+Jammu
+Jamshedpur
+Jodhpur
+Kakinada
+Kalyan
+Kanpur
+Kochi
+Kohima
+Kolkata
+Kota
+Kozhikode
+Ludhiana
+Lucknow
+Madurai
+Meerut
+Mumbai
+Mysuru
+Nagpur
+Nashik
+Navi Mumbai
+Noida
+Panjim
+Patna
+Prayagraj
+Pune
+Raipur
+Rajkot
+Ranchi
+Rourkela
+Sambalpur
+Shillong
+Shimla
+Siliguri
+Srinagar
+Surat
+Thiruvananthapuram
+Tiruchirappalli
+Tirupati
+Vadodara
+Varanasi
+Vijayawada
+Visakhapatnam
+Warangal
+
+# STATES
+Andhra Pradesh
+Arunachal Pradesh
+Assam
+Bihar
+Chhattisgarh
+Goa
+Gujarat
+Haryana
+Himachal Pradesh
+Jharkhand
+Karnataka
+Kerala
+Madhya Pradesh
+Maharashtra
+Manipur
+Meghalaya
+Mizoram
+Nagaland
+Odisha
+Punjab
+Rajasthan
+Sikkim
+Tamil Nadu
+Telangana
+Tripura
+Uttar Pradesh
+Uttarakhand
+West Bengal
+
+# UT (Union Territories)
+Andaman and Nicobar
+Chandigarh
+Dadra and Nagar Haveli
+Daman and Diu
+Jammu and Kashmir
+Ladakh
+Lakshadweep
+Puducherry
+
+# ============================================================
+# UNIVERSITIES & EDUCATIONAL INSTITUTIONS (Vishwavidyalaya)
+# ============================================================
+AIIMS
+Aligarh Muslim University
+AMU
+Anna University
+Bangalore University
+Banaras Hindu University
+BHU
+BITS Pilani
+BPUT
+Calcutta University
+Calicut University
+Central University
+Delhi University
+DU
+Gujarat University
+IIM
+IIM Ahmedabad
+IIM Bangalore
+IIM Calcutta
+IIM Kozhikode
+IIM Lucknow
+IIT
+IIT Bombay
+IIT Delhi
+IIT Guwahati
+IIT Kanpur
+IIT Kharagpur
+IIT Madras
+IIT Roorkee
+IGNOU
+Jadavpur University
+Jamia Millia
+Jawaharlal Nehru University
+JNU
+Kurukshetra University
+Lucknow University
+Madras University
+Manipal University
+Mumbai University
+Mysore University
+NALSAR
+NIT
+NIT Rourkela
+NITS Silchar
+Osmania University
+Patna University
+Panjab University
+Pune University
+Rajasthan University
+Sambalpur University
+Utkal University
+VIT
+VSSUT
+
+# ============================================================
+# INDIAN TECHNICAL / GOVERNMENT TERMS
+# ============================================================
+Aadhaar
+ABHA
+AIIMS
+ASHA
+Anganwadi
+AYUSH
+BPL
+BSF
+CISF
+CRPF
+CSC
+DRDO
+Gram Panchayat
+GST
+IATF
+ICDS
+ISRO
+Jan Dhan
+Jan Suvidha
+JioFiber
+Kisan
+MNREGA
+MSME
+NABARD
+Nai Disha
+Niti Aayog
+NPS
+PM Kisan
+PM Ujjwala
+PMAY
+PMJAY
+PMJJBY
+PMSBY
+PAN card
+Pradhan Mantri
+RBI
+Rojgar
+Rupay
+SBI
+Seva Kendra
+SIDBI
+Swachh Bharat
+UPI
+Ration card
+Tehsil
+Vikas
+
+# ============================================================
+# INDIAN FOOD & COMMON WORDS (Jo aksar galat transcribe hota hai)
+# ============================================================
+Aloo
+Biryani
+Chaat
+Chai
+Chapati
+Chhole
+Dal
+Dhokla
+Dosa
+Gulab Jamun
+Halwa
+Idli
+Jalebi
+Kadai
+Kaju
+Kheer
+Kulfi
+Ladoo
+Lassi
+Luchi
+Makhani
+Nimbu
+Paneer
+Paratha
+Puri
+Raita
+Rasam
+Roti
+Sabzi
+Sambar
+Samosa
+Thali
+
+# ============================================================
+# RELIGIOUS / CULTURAL TERMS (Dharmik Shabd)
+# ============================================================
+Aarti
+Abhishek
+Amarnath
+Ardas
+Baisakhi
+Diwali
+Durga Puja
+Eid
+Ganesh Chaturthi
+Griha Pravesh
+Holi
+Janmashtami
+Karva Chauth
+Lohri
+Mahashivratri
+Navratri
+Onam
+Pongal
+Puja
+Raksha Bandhan
+Ram Navami
+Ugadi
+Vishwakarma Puja
+Vrindavan
+
+# ============================================================
+# COMMON HINGLISH / MIXED WORDS (Jo STT aksar galat karta hai)
+# ============================================================
+Acha
+Accha
+Achha
+Bhaiya
+Bhai
+Didi
+Dada
+Nana
+Nani
+Dadi
+Dadu
+Chacha
+Chachi
+Mama
+Mami
+Mausa
+Mausi
+Fufa
+Bua
+Jija
+Saali
+Sali
+Bhabhi
+Dewar
+Jeth
+Nanad
+Sasur
+Saas
+Damad
+Bahu
+
+# ============================================================
+# POPULAR INDIAN BRANDS & APPS (Jo STT confuse karta hai)
+# ============================================================
+BigBasket
+Byju's
+Dailyhunt
+Dhruv
+Dunzo
+Flipkart
+HDFC
+ICICI
+IndiaMart
+Instamart
+Jio
+Jio Cinema
+Meesho
+MeesHo
+Myntra
+Nykaa
+OLX
+PhonePe
+Paytm
+Rapido
+ShareChat
+Snapdeal
+Swiggy
+TataSky
+Udaan
+Urban Company
+WhatsApp
+Zomato
+Zepto

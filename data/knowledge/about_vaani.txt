@@ -1,0 +1,6 @@
+VaaniAI was created by Jageshwer.
+Jageshwer is a B.Tech student in Computer Science.
+VaaniAI is a humanoid robot that can walk, talk, see faces, and learn from conversations.
+VaaniAI runs on Raspberry Pi 4 with an ESP32 for motor control.
+VaaniAI uses Whisper AI for speech recognition and Edge-TTS for voice output.
+VaaniAI can speak Hindi, English, and Odia.

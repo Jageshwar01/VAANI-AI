@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Large Model weights (> 100MB cannot be pushed to GitHub)
+*.gguf
+*.bin
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Databases and runtime data
+data/*.db
+*.sqlite
+*.sqlite3
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE configurations
+.vscode/
+.idea/
+
+# Secrets & Environment variables
+.env
+.env.*

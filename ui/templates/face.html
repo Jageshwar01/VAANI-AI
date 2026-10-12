@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vaani Face</title>
+    <style>
+        :root {
+            --bg1: #050816;
+            --bg2: #0b122b;
+            --panel: rgba(255,255,255,0.06);
+            --panel-border: rgba(255,255,255,0.12);
+            --text: #f4f7fb;
+            --muted: #b8c2d1;
+            --neutral-eye: #f5f7fb;
+            --happy-eye: #9ff7c1;
+            --thinking-eye: #ffe08a;
+            --alert-eye: #ff8a8a;
+            --listening-glow: #6cb8ff;
+            --speaking-glow: #d39bff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at top, #16213e 0%, var(--bg2) 35%, var(--bg1) 100%);
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: var(--text);
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .scene {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(255,255,255,0.06), transparent 28%),
+                radial-gradient(circle at 50% 80%, rgba(108,184,255,0.05), transparent 35%);
+            filter: blur(8px);
+        }
+
+        .status-bar {
+            position: absolute;
+            top: 2.2vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(92vw, 1100px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 18px;
+            border-radius: 18px;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: clamp(16px, 2vw, 24px);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #6cb8ff;
+            box-shadow: 0 0 18px rgba(108,184,255,0.8);
+        }
+
+        .status-pills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .pill {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            font-size: clamp(12px, 1.2vw, 15px);
+            color: var(--muted);
+            transition: 0.25s ease;
+        }
+
+        .pill.active {
+            color: white;
+            border-color: rgba(255,255,255,0.24);
+        }
+
+        .pill.listening.active {
+            background: rgba(108,184,255,0.18);
+            box-shadow: 0 0 18px rgba(108,184,255,0.24);
+        }
+
+        .pill.speaking.active {
+            background: rgba(211,155,255,0.18);
+            box-shadow: 0 0 18px rgba(211,155,255,0.22);
+        }
+
+        .face-wrap {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 4vh;
+            padding-top: 8vh;
+        }
+
+        .eyes {
+            width: min(72vw, 900px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: min(8vw, 80px);
+        }
+
+        .eye-shell {
+            width: min(26vw, 280px);
+            height: min(26vw, 280px);
+            min-width: 170px;
+            min-height: 170px;
+            border-radius: 42% 42% 50% 50%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                inset 0 0 30px rgba(255,255,255,0.05),
+                0 10px 40px rgba(0,0,0,0.28);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .eye {
+            width: 72%;
+            height: 72%;
+            border-radius: 50%;
+            background: var(--neutral-eye);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition:
+                background 0.25s ease,
+                height 0.16s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+            box-shadow: 0 0 32px rgba(255,255,255,0.16);
+            position: relative;
+        }
+
+        .pupil {
+            width: 30%;
+            height: 30%;
+            border-radius: 50%;
+            background: #10131c;
+            position: absolute;
+            transition: transform 0.14s ease;
+            box-shadow:
+                inset 0 0 6px rgba(255,255,255,0.12),
+                0 0 10px rgba(0,0,0,0.35);
+        }
+
+        .iris-highlight {
+            position: absolute;
+            width: 16%;
+            height: 16%;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.8);
+            top: 28%;
+            left: 34%;
+            filter: blur(1px);
+            pointer-events: none;
+        }
+
+        .mouth-wrap {
+            width: min(22vw, 260px);
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mouth {
+            width: 110px;
+            height: 18px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.18s ease;
+            box-shadow: 0 0 18px rgba(255,255,255,0.12);
+        }
+
+        .subtitle-panel {
+            position: absolute;
+            bottom: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(90vw, 980px);
+            padding: 20px 26px;
+            border-radius: 24px;
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.24);
+        }
+
+        .subtitle-label {
+            font-size: 13px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .subtitle-text {
+            font-size: clamp(20px, 2.5vw, 34px);
+            font-weight: 600;
+            line-height: 1.35;
+            color: var(--text);
+            min-height: 1.4em;
+        }
+
+        .emotion-tag {
+            margin-top: 10px;
+            font-size: clamp(12px, 1.2vw, 15px);
+            color: var(--muted);
+            text-transform: capitalize;
+        }
+
+        .thinking .eye-shell {
+            transform: translateY(-2px);
+        }
+
+        .listening-glow .eye {
+            box-shadow:
+                0 0 34px rgba(108,184,255,0.38),
+                0 0 52px rgba(108,184,255,0.2);
+        }
+
+        .speaking-glow .mouth {
+            background: #f7e9ff;
+            box-shadow:
+                0 0 20px rgba(211,155,255,0.35),
+                0 0 40px rgba(211,155,255,0.18);
+        }
+
+        .footer-note {
+            position: absolute;
+            right: 18px;
+            bottom: 16px;
+            font-size: 12px;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.6px;
+        }
+
+        @media (max-width: 768px) {
+            .status-bar {
+                width: 94vw;
+                padding: 10px 12px;
+            }
+
+            .eyes {
+                width: 92vw;
+                gap: 16px;
+            }
+
+            .eye-shell {
+                min-width: 130px;
+                min-height: 130px;
+            }
+
+            .mouth-wrap {
+                height: 70px;
+            }
+
+            .subtitle-panel {
+                width: 94vw;
+                bottom: 3vh;
+                padding: 16px 18px;
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="scene" id="scene">
+        <div class="ambient-glow"></div>
+
+        <div class="status-bar">
+            <div class="brand">
+                <div class="brand-dot"></div>
+                <div>Vaani</div>
+            </div>
+
+            <div class="status-pills">
+                <div class="pill listening" id="listeningPill">Listening</div>
+                <div class="pill speaking" id="speakingPill">Speaking</div>
+                <div class="pill" id="connectionPill">Connected</div>
+            </div>
+        </div>
+
+        <div class="face-wrap">
+            <div class="eyes" id="eyesWrap">
+                <div class="eye-shell">
+                    <div class="eye" id="leftEye">
+                        <div class="pupil" id="pupilL"></div>
+                        <div class="iris-highlight"></div>
+                    </div>
+                </div>
+
+                <div class="eye-shell">
+                    <div class="eye" id="rightEye">
+                        <div class="pupil" id="pupilR"></div>
+                        <div class="iris-highlight"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mouth-wrap">
+                <div class="mouth" id="mouth"></div>
+            </div>
+        </div>
+
+        <div class="subtitle-panel">
+            <div class="subtitle-label">Vaani Status</div>
+            <div class="subtitle-text" id="text">Initializing...</div>
+            <div class="emotion-tag" id="emotionTag">neutral</div>
+        </div>
+
+        <div class="footer-note">Humanoid Interface</div>
+    </div>
+
+    <script>
+        const scene = document.getElementById("scene");
+        const leftEye = document.getElementById("leftEye");
+        const rightEye = document.getElementById("rightEye");
+        const pupilL = document.getElementById("pupilL");
+        const pupilR = document.getElementById("pupilR");
+        const mouth = document.getElementById("mouth");
+        const textEl = document.getElementById("text");
+        const emotionTag = document.getElementById("emotionTag");
+        const listeningPill = document.getElementById("listeningPill");
+        const speakingPill = document.getElementById("speakingPill");
+        const connectionPill = document.getElementById("connectionPill");
+
+        let currentState = {
+            emotion: "neutral",
+            text: "Initializing...",
+            listening: false,
+            speaking: false,
+            connected: true,
+        };
+
+        let blinkLocked = false;
+        let blinkInterval = null;
+        let speakingInterval = null;
+        let idleMotionPhase = 0;
+
+        function emotionColor(emotion) {
+            if (emotion === "happy") return getComputedStyle(document.documentElement).getPropertyValue("--happy-eye").trim();
+            if (emotion === "thinking") return getComputedStyle(document.documentElement).getPropertyValue("--thinking-eye").trim();
+            if (emotion === "alert") return getComputedStyle(document.documentElement).getPropertyValue("--alert-eye").trim();
+            return getComputedStyle(document.documentElement).getPropertyValue("--neutral-eye").trim();
+        }
+
+        function applyEmotion(emotion) {
+            const color = emotionColor(emotion);
+            leftEye.style.background = color;
+            rightEye.style.background = color;
+
+            leftEye.style.transform = "scaleY(1)";
+            rightEye.style.transform = "scaleY(1)";
+            mouth.style.borderRadius = "999px";
+
+            scene.classList.remove("thinking", "listening-glow", "speaking-glow");
+
+            if (emotion === "happy") {
+                mouth.style.width = "130px";
+                mouth.style.height = "22px";
+                mouth.style.borderRadius = "0 0 999px 999px";
+                mouth.style.transform = "translateY(6px)";
+            } else if (emotion === "thinking") {
+                scene.classList.add("thinking");
+                mouth.style.width = "70px";
+                mouth.style.height = "10px";
+                mouth.style.transform = "translateY(0)";
+            } else if (emotion === "alert") {
+                mouth.style.width = "88px";
+                mouth.style.height = "26px";
+                mouth.style.borderRadius = "999px";
+                mouth.style.transform = "translateY(0)";
+            } else {
+                mouth.style.width = "110px";
+                mouth.style.height = "18px";
+                mouth.style.borderRadius = "999px";
+                mouth.style.transform = "translateY(0)";
+            }
+        }
+
+        function applyListening(isListening) {
+            listeningPill.classList.toggle("active", isListening);
+            scene.classList.toggle("listening-glow", isListening);
+        }
+
+        function stopSpeakingAnimation() {
+            if (speakingInterval) {
+                clearInterval(speakingInterval);
+                speakingInterval = null;
+            }
+        }
+
+        function startSpeakingAnimation() {
+            if (speakingInterval) return;
+
+            let open = false;
+            speakingInterval = setInterval(() => {
+                open = !open;
+                mouth.style.height = open ? "48px" : "18px";
+                mouth.style.width = open ? "84px" : "118px";
+                mouth.style.borderRadius = open ? "40px" : "999px";
+            }, 180);
+        }
+
+        function applySpeaking(isSpeaking) {
+            speakingPill.classList.toggle("active", isSpeaking);
+            scene.classList.toggle("speaking-glow", isSpeaking);
+
+            if (isSpeaking) {
+                startSpeakingAnimation();
+            } else {
+                stopSpeakingAnimation();
+                applyEmotion(currentState.emotion);
+            }
+        }
+
+        function applyConnection(isConnected) {
+            connectionPill.classList.toggle("active", isConnected);
+            connectionPill.textContent = isConnected ? "Connected" : "Disconnected";
+            connectionPill.style.background = isConnected
+                ? "rgba(130,255,170,0.14)"
+                : "rgba(255,120,120,0.14)";
+        }
+
+        function blink() {
+            if (blinkLocked) return;
+            blinkLocked = true;
+
+            leftEye.style.height = "10%";
+            rightEye.style.height = "10%";
+
+            setTimeout(() => {
+                leftEye.style.height = "72%";
+                rightEye.style.height = "72%";
+                blinkLocked = false;
+            }, 140);
+        }
+
+        function startBlinking() {
+            if (blinkInterval) clearInterval(blinkInterval);
+            blinkInterval = setInterval(() => {
+                const next = 2800 + Math.random() * 2400;
+                blink();
+                clearInterval(blinkInterval);
+                blinkInterval = setInterval(startBlinking, next);
+            }, 3200);
+        }
+
+        function movePupils(x, y) {
+            pupilL.style.transform = `translate(${x}px, ${y}px)`;
+            pupilR.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        document.addEventListener("mousemove", (e) => {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const dx = ((e.clientX - centerX) / centerX) * 16;
+            const dy = ((e.clientY - centerY) / centerY) * 12;
+            movePupils(dx, dy);
+        });
+
+        function idleEyeMotion() {
+            idleMotionPhase += 0.025;
+            const x = Math.sin(idleMotionPhase) * 4;
+            const y = Math.cos(idleMotionPhase * 0.8) * 2;
+            if (!document.hasFocus()) {
+                movePupils(x, y);
+            }
+            requestAnimationFrame(idleEyeMotion);
+        }
+
+        async function updateFace() {
+            try {
+                const res = await fetch("/state");
+                const data = await res.json();
+                currentState = data;
+
+                textEl.innerText = data.text || "Waiting...";
+                emotionTag.innerText = data.emotion || "neutral";
+
+                applyEmotion(data.emotion || "neutral");
+                applyListening(!!data.listening);
+                applySpeaking(!!data.speaking);
+                applyConnection(data.connected !== false);
+            } catch (err) {
+                textEl.innerText = "Connection lost...";
+                emotionTag.innerText = "alert";
+                applyEmotion("alert");
+                applyListening(false);
+                applySpeaking(false);
+                applyConnection(false);
+            }
+        }
+
+        updateFace();
+        setInterval(updateFace, 180);
+        startBlinking();
+        idleEyeMotion();
+    </script>
+</body>
+</html>

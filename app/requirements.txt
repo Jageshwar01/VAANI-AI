@@ -1,0 +1,13 @@
+pyttsx3
+SpeechRecognition
+pyaudio
+opencv-python
+face_recognition
+numpy
+pyserial
+edge-tts
+playsound
+noisereduce
+requests
+faster-whisper
+langdetect
